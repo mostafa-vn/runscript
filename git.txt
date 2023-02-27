@@ -1,5 +1,10 @@
+git config --global user.email "mostafa.vahedi.nejad@gmail.com"
+git config --global user.name "Mostafa VN"
+
 git clone https://github.com/mostafa-vn/runscript.git
 cd runscript
 git add xxx.php
 git commit -m "TEST"
 git push origin main
+
+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
