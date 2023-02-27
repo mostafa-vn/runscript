@@ -1,0 +1,5 @@
+git clone https://github.com/mostafa-vn/runscript.git
+cd runscript
+git add xxx.php
+git commit -m "TEST"
+git push origin main
