@@ -1,4 +1,4 @@
-apt update && apt upgrade && apt dist-upgrade -y && apt autoremove -y
+apt update -y && apt upgrade -y && apt dist-upgrade -y && apt autoremove -y
 
 
 apt install curl toilet screen python3-pip lolcat zsh socat certbot software-properties-common net-tools -y
