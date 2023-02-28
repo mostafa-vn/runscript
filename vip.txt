@@ -1,0 +1,53 @@
+apt update && apt upgrade && apt dist-upgrade -y && apt autoremove -y
+
+
+apt install curl toilet screen python3-pip lolcat zsh socat certbot software-properties-common net-tools -y
+
+
+apt install curl toilet screen python3-pip lolcat vim ruby zsh unzip git nodejs gnupg lsb-release socat certbot software-properties-common net-tools ufw docker docker.io git build-essential libssl-dev zlib1g-dev apache2 -y
+
+apt install npm -y
+
+pip3 install schedule requests python-telegram-bot==13.15
+
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
+
+certbot certonly --standalone --preferred-challenges http --agree-tos --email mostafa.vahedi.nejad@gmail.com -d vip.mostafavn.site
+
+
+vim ~/.zshrc
+clear
+toilet -f future MOSTAFA | lolcat
+
+
+passwd
+
+
+nano /etc/ssh/sshd_config
+ufw allow 1994/tcp && service ssh restart && systemctl restart ssh
+
+
+git clone https://github.com/FreedomPrevails/JSMTProxy.git && cd JSMTProxy && nano config.json
+pm2 start mtproxy.js -i max 
+
+
+wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
+
+certbot renew --force-renewal
+
+
+/etc/letsencrypt/live/vip.mostafavn.site/fullchain.pem
+/etc/letsencrypt/live/vip.mostafavn.site/privkey.pem
+
+sysctl net.ipv4.ip_forward=1
+iptables -t nat -A PREROUTING -p tcp --dport 22 -j DNAT --to-destination IRAN_IP
+iptables -t nat -A PREROUTING -j DNAT --to-destination GERMAN_IP
+iptables -t nat -A POSTROUTING -j MASQUERADE
+
+./mtproto-proxy -u nobody -p 8888 -H 1378 -S 497343eca8ad1e73a8acfd3f6b01b109 -P 303c315d57c1149bfee7794fbea21b57 --aes-pwd proxy-secret proxy-multi.conf -M 3
