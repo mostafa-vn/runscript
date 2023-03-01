@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django test</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div>
+        <div class="abs">
+            <img class="test" src="{% static 'test.png' %}">
+            
+            <img src="{% static 'logo.png' %}" alt="" class="logo">
+        </div>
+        <div>
+            <p>این صفحه نمونه برای صحت اجرای وبسایت جنگو بروی سرویس های سون هاست میباشد</p>
+        </div>
+    </div>
+</body>
+
+</html>

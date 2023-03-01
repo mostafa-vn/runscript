@@ -1,0 +1,59 @@
+کد ریدایریکت مقالات در کانفیگ وارد شود 
+if($_SERVER[HTTP_HOST]=='domain.ir'){header("Location: https://domain.com/$_SERVER[REQUEST_URI]");}
+
+==============================================================================================================
+
+curl.php کد
+
+<?php
+date_default_timezone_set('Asia/tehran');
+echo '<div class="container">' . "The time is " . date("h:i:sa"). '</div>';
+echo "<br><br>";
+echo 'Current PHP version: ' . phpversion();
+echo "<br><br>";
+echo 'file_get_contents : ', ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
+echo "<br><br>";
+echo 'Curl: ', function_exists('curl_version') ? 'Enabled' : 'Disabled';
+echo "<br><br>";
+echo "Memory Limit:" . ini_get('memory_limit');
+echo "<br><br>";
+$v = ini_get("max_input_vars");
+echo  "Max Input Vars is <b>$v</b>";
+echo "<br><br>";
+$r= shell_exec("php -m");
+echo "<pre>".$r."</pre>";
+...................................................................
+
+کد ایمپورت داده با پسوندهای مختلف
+
+define('ALLOW_UNFILTERED_UPLOADS', true);
+
+=================================
+
+کد برای ایمپورت ویدئو در کانفیگ
+define('ALLOW_UNFILTERED_UPLOADS', true);
+
+
+...............
+درونریزی دیتابیس
+mysql -p database -u username < /home/user/ariaimen.sql
+
+دستور force درونریزی دیتابیس
+mysql -u database -p -f -D username < /home/user/script.sql
+
+سایت نشاند دهنده مقدار بازدید سایت
+https://statsfa.com/
+
+
+
+if($_SERVER[HTTP_HOST]=='domain-old.ir'){header("Location: https://domain-new.com/$_SERVER[REQUEST_URI]");}
+
+
+
+پاککردن ایمیل های اضافی از سرور ها
+
+exim -bp | awk '/^ *[0-9]+[mhd]/{print "exim -Mrm " $3}' | bash
+
+..........................
+پیدا کردن یک متن در فایل های یک دایرکتوری
+grep -rnw '/path/to/somewhere/' -e 'pattern'

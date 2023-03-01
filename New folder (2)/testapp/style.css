@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'yekan';
+    src: url('yekan.ttf');
+}
+body {
+    background-color: #003c29eb;
+    padding: 0;
+    margin: 0;
+    font-family: 'yekan';
+}
+.test {
+    width: 500px;
+    margin: auto;
+    display: block;
+    border-radius: 20px;
+    margin-top: 20vh;
+}
+p {
+    color: #e4efeb;
+    margin: 50px auto;
+    display: block;
+    width: max-content;
+    font-size: 23px;
+    max-width: 500px;
+    text-align: center;
+    line-height: 40px;
+}
+.abs {
+    position: relative;
+    width: 500px;
+    margin: auto;
+}
+.logo {
+    position: absolute;
+    bottom: -7px;
+    right: 40px;
+    opacity: 0.5;
+}
