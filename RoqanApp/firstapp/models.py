@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     FirstName = models.CharField('موضوع', blank=False, max_length=100, help_text="این یک متن راهنما برای موضوع است")
     LastName = models.CharField('موضوع', blank=False, max_length=100, help_text="این یک متن راهنما برای موضوع است")
     PhoneNumber = models.IntegerField('تلفن همراه', blank=True, null=False, default='100', help_text='قیمت محصول مورد نظر را وارد کنید')
@@ -20,8 +22,15 @@ class Customer(models.Model):
     # status = models.CharField('وضعیت محصول', max_length=1, choices=STATUS, blank=False, default='y', help_text='وضعیت محصول')
 
     def __str__(self):
-        return self.FirstName
+        return self.LastName
 
+    class Meta:
+        ordering = ["JoinedDate"]
+        verbose_name_plural = "پست ها"
+        permissions = (( 'can_mark_returned', 'set book as returned' ),)
+
+    def get_absolute_url(self):
+        return "/"
 # from django.contrib.auth.models import User
 
 # class Post(models.Model):
