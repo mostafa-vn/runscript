@@ -3,20 +3,30 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ParseMo
 import os
 import time
 import datetime
+from PIL import Image
 
 updater = Updater(
     token="5594782594:AAERk4NH8Cubaj7DkWqRJohCokUP5V7FfLA", use_context=True)
 
-f =  open('a.txt')
+f =  open('caption.txt')
 caption = f.read()
 
 def start(update: Update, context: CallbackContext):
     if update.message.chat_id == 5074618670:
         while True:
             if datetime.datetime.now().hour == 21 and datetime.datetime.now().minute == 00:
+
+                im1 = Image.open('carbon.png')
+                width, height = im1.size
+                im2 = Image.open('wm.png')
+                width1, height1 = im2.size
+                back_im = im1.copy()
+                back_im.paste(im2,  (width - width1 -50, height - height1 - 100), im2)
+                back_im.save('post.png', quality=95)
+
                 keyboard = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text='عضویت در کانال MTRX', url='t.me/mtrx_ir')]])
-                context.bot.sendPhoto(chat_id='@mtrx_ir', photo=open('carbon.png', 'rb'),
+                    [[InlineKeyboardButton(text='Join The MTRX | ماتریکس', url='t.me/mtrx_ir')]])
+                context.bot.sendPhoto(chat_id='@mtrx_ir', photo=open('post.png', 'rb'),
                                       caption=f'{caption}', reply_markup=keyboard, parse_mode=ParseMode.MARKDOWN)
             time.sleep(60)
 

@@ -1,0 +1,3 @@
+Create Qrcode with qrP in #python
+
+`pip3 install qrcode`
