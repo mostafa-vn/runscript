@@ -4,15 +4,14 @@ from . import models
 
 @admin.register(models.Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    # list_display = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate', 'RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq')
-    list_display = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate', 'RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq')
-    list_filter = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate', 'RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq')
-    fields = (('FirstName', 'LastName'), ('PhoneNumber', 'PelakNumber'), 'JoinedDate', ('RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq'))
+    list_display = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate')
+    list_filter = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate')
+    fields = (('FirstName', 'LastName'), ('PhoneNumber', 'PelakNumber', 'letter'), 'JoinedDate', ('RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq'))
     # date_hierarchy = 'JoinedDate'
     actions_on_bottom = True
     view_on_site = True
     search_fields = ['text']
-    list_display_links = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate', 'RoqanMotor', 'RoqanGirbox', 'FilterRoqan', 'FilterHava', 'FilterOtaq')
+    list_display_links = ('FirstName', 'LastName', 'PhoneNumber', 'PelakNumber', 'JoinedDate')
     # ordering = ('-JoinedDate',)
     show_full_result_count = False
 

@@ -10,7 +10,13 @@
 
 <body>
   
-index
+  <h1>customers</h1>
+
+  <ul>
+    {% for x in services %}
+    <li>{{ x.firstname }} {{ x.lastname }}</li>
+    {% endfor %}
+  </ul>
 
 </body>
 
