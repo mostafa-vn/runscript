@@ -1,0 +1,5 @@
+yum install firewalld wget screen nano zabbix-agent tmpwatch letsencrypt-cpanel liblsapi ea-php80-php-sourceguardian.x86_64 ea4-php80-php-sourceguardian ea4-php*-sourceguardian liblsapi-devel makecache alt-php80-sourceguardian ea-apache24-mod_lsapi alt-php74-sourceguardian -y
+
+yum install firewalld
+systemctl enable firewalld
+systemctl srtart firewalld
