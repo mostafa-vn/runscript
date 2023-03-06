@@ -1,3 +1,4 @@
-Create Qrcode with qrP in #python
+Create *QRcode* with qrpy in #python
 
-`pip3 install qrcode`
+`pip3 install یبسش qrcode`
+‌
