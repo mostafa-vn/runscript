@@ -11,7 +11,7 @@ updater = Updater(
 def start(update: Update, context: CallbackContext):
     if update.message.chat_id == 5074618670:
         while True:
-            if datetime.now().hour == int('00') and datetime.datetime.now().minute == int('00'):
+            if datetime.now().hour == int('15') and datetime.now().minute == int('10'):
                 
                 f = open('caption.txt', "r", encoding="utf-8")
                 caption = f.read()
